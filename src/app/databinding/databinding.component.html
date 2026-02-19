@@ -1,0 +1,46 @@
+<section class="emi-wrap">
+  <div class="emi-card">
+    <h2>Simple EMI Calculator</h2>
+    <p class="subtitle">Select values and calculate your monthly EMI instantly.</p>
+
+    <div class="field-grid">
+      <div class="field">
+        <label for="loanType">Loan Type</label>
+        <select id="loanType" [value]="selectedLoan" (change)="onLoanSelectionChange($event)">
+          <option *ngFor="let loan of loanTypes" [value]="loan.name">
+            {{ loan.name }} ({{ loan.annualInterest }}%)
+          </option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="principal">Principal Amount</label>
+        <input
+          id="principal"
+          type="number"
+          [value]="principal"
+          min="0"
+          (input)="onPrincipalChange($event)"
+        />
+      </div>
+
+      <div class="field">
+        <label for="tenure">Tenure (Months)</label>
+        <select id="tenure" [value]="tenureMonths" (change)="onTenureChange($event)">
+          <option *ngFor="let months of tenureOptions" [value]="months">
+            {{ months }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <button type="button" class="calc-btn" (click)="calculateEmi()">Calculate EMI</button>
+
+    <div class="result-card">
+      <p><span>Interest Rate</span><strong>{{ annualInterest }}% / year</strong></p>
+      <p><span>Monthly EMI</span><strong>{{ emi | number:'1.2-2' }}</strong></p>
+      <p><span>Total Amount Payable</span><strong>{{ totalAmount | number:'1.2-2' }}</strong></p>
+      <p><span>Total Interest</span><strong>{{ totalInterest | number:'1.2-2' }}</strong></p>
+    </div>
+  </div>
+</section>

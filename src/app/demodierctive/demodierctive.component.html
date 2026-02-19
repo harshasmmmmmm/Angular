@@ -1,0 +1,53 @@
+<div>
+  <h1>
+    hi div1
+  </h1>
+</div>
+
+<div>
+  <h1 *ngIf="true">
+    hi div2
+  </h1>
+</div>
+
+<div *ngIf="abc">
+  <h1>
+    hi div3
+  </h1>
+</div>
+
+<p *ngFor="let emps of emp">
+  {{ emps }}
+
+</p>
+<input type="text" #fru>
+<input type="submit"(click)="addfruit(fru.value)">
+<p *ngFor="let p of fruit">
+ {{ p }}
+</p>
+<!-- Input and button -->
+<input type="number" #num class="form-control mb-2" placeholder="Enter 1,2,3">
+<button class="btn btn-primary mb-3" (click)="selected = num.valueAsNumber">Show</button>
+
+<!-- Switch-case display -->
+<div [ngSwitch]="selected" style="font-size: 20px; color: darkgreen;">
+  <div *ngSwitchCase="1">One</div>
+  <div *ngSwitchCase="2">Two</div>
+  <div *ngSwitchCase="3">Three</div>
+  <div *ngSwitchDefault>Enter a number between 1 and 3</div>
+</div>
+
+<div [ngClass]="{'bdr': true, 'bgclr': true}">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam eu arcu tristique 
+  fermentum. Sed a nisl vitae erat laoreet gravida. Curabitur feugiat, odio sit amet tincidunt facilisis, 
+  nulla lorem luctus risus, ut ultrices justo ligula et orci. Phasellus dignissim, nisl ut hendrerit vulputate, 
+  justo turpis malesuada risus, a malesuada lacus elit sit amet justo. Donec non velit nec sapien facilisis mattis. 
+  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+</div>
+<div  [ngClass]="{'bdr': true, 'bgclr': false}">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet quam eu arcu tristique 
+  fermentum. Sed a nisl vitae erat laoreet gravida. Curabitur feugiat, odio sit amet tincidunt facilisis, 
+  nulla lorem luctus risus, ut ultrices justo ligula et orci. Phasellus dignissim, nisl ut hendrerit vulputate, 
+  justo turpis malesuada risus, a malesuada lacus elit sit amet justo. Donec non velit nec sapien facilisis mattis. 
+  Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+</div>

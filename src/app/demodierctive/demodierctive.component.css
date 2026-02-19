@@ -1,0 +1,171 @@
+:host {
+  --bg-a: #edf7ff;
+  --bg-b: #f5fff5;
+  --surface: #ffffff;
+  --text-main: #1f2a37;
+  --text-sub: #5b6777;
+  --stroke: #d9e4ef;
+  --brand: #0b6bcb;
+  --brand-soft: #e7f2ff;
+  --mint-soft: #e9faef;
+  --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  display: block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.directive-page {
+  min-height: calc(100vh - 40px);
+  padding: 20px;
+  background: linear-gradient(140deg, var(--bg-a), var(--bg-b));
+}
+
+.directive-shell {
+  width: min(980px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 16px;
+}
+
+.hero,
+.card {
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+h1 {
+  margin: 8px 0 10px;
+  font-size: 1.9rem;
+  color: var(--text-main);
+}
+
+.intro {
+  margin: 0;
+  color: var(--text-sub);
+  max-width: 70ch;
+}
+
+.chip-row {
+  margin-top: 14px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  background: var(--brand-soft);
+  color: var(--brand);
+  border: 1px solid #cfe4ff;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.grid.two-col {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  color: var(--text-main);
+}
+
+h3 {
+  margin: 0 0 8px;
+  font-size: 0.95rem;
+  color: var(--text-main);
+}
+
+p {
+  margin: 0;
+  color: var(--text-sub);
+}
+
+ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  color: var(--text-main);
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  color: #0a4f95;
+}
+
+.example-grid {
+  margin-top: 12px;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.snippet {
+  border: 1px solid var(--stroke);
+  border-radius: 10px;
+  background: #fbfdff;
+  padding: 12px;
+}
+
+pre {
+  margin: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+.note {
+  background: linear-gradient(135deg, var(--mint-soft), #f5fbff);
+}
+
+@media (max-width: 760px) {
+  .directive-page {
+    padding: 12px;
+    min-height: auto;
+  }
+
+  .hero,
+  .card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 1.45rem;
+  }
+
+  .grid.two-col,
+  .example-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.div{
+  width: 50x;
+}
+.bdr{
+  border: 5px solid brown;
+}
+.bgclr{
+  background-color: orchid;
+}
