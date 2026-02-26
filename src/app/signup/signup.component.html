@@ -3,25 +3,48 @@
     <h1>Create Account</h1>
     <p class="subtitle">Sign up to get started</p>
 
-    <form class="signup-form">
+    <form (ngSubmit)="onRegister()" #signupForm="ngForm" class="signup-form">
+      
       <label for="fullName">Full Name</label>
-      <input id="fullName" type="text" placeholder="Your full name" />
+      <input id="fullName" type="text" placeholder="Your full name" required
+             [(ngModel)]="customerName" name="customerName" #name="ngModel" />
+      <div *ngIf="name.invalid && name.touched" class="error">Full Name is required</div>
 
       <label for="email">Email</label>
-      <input id="email" type="email" placeholder="you@example.com" />
+      <input id="email" type="email" placeholder="you@example.com" required
+             [(ngModel)]="emailId" name="emailId" #email="ngModel" />
+      <div *ngIf="email.invalid && email.touched" class="error">Valid email is required</div>
+
+      <label for="mobile">Mobile Number</label>
+      <input id="mobile" type="text" placeholder="Your mobile number" required
+             [(ngModel)]="mobileNo" name="mobileNo" #mobile="ngModel" />
+
+      <label for="address">Address</label>
+      <input id="address" type="text" placeholder="Your address" required
+             [(ngModel)]="address" name="address" #addr="ngModel" />
 
       <label for="password">Password</label>
-      <input id="password" type="password" placeholder="Create a password" />
+      <input id="password" type="password" placeholder="Create a password" required
+             [(ngModel)]="password" name="password" #pwd="ngModel" />
 
       <label for="confirmPassword">Confirm Password</label>
-      <input id="confirmPassword" type="password" placeholder="Re-enter your password" />
+      <input id="confirmPassword" type="password" placeholder="Re-enter your password" required
+             [(ngModel)]="confirmPassword" name="confirmPassword" #confirmPwd="ngModel" />
+      <div *ngIf="password !== confirmPassword && confirmPwd.touched" class="error">
+        Passwords do not match
+      </div>
 
-      <button type="submit">Sign Up</button>
+      <button type="submit" [disabled]="signupForm.invalid || password !== confirmPassword">
+        Sign Up
+      </button>
     </form>
 
     <p class="footer-text">
       Already have an account?
       <a routerLink="/login">Login</a>
     </p>
+
+    <p *ngIf="message" class="success">{{ message }}</p>
+    <p *ngIf="error" class="error">{{ error }}</p>
   </div>
 </div>

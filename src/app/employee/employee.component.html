@@ -1,0 +1,89 @@
+<!-- <section class="employee">
+  <header class="employee__header">
+    <div>
+      <p class="employee__eyebrow">Employee CRUD</p>
+      <h1 class="employee__title">Manage employee records</h1>
+      <p class="employee__subtitle">Add, update, or remove team members in one place.</p>
+    </div>
+    <div class="employee__meta">
+      <span class="employee__pill">Total</span>
+      <span class="employee__count">{{ employees?.length || 0 }}</span>
+    </div>
+  </header>
+
+  <form class="employee__form" (ngSubmit)="saveEmployee()">
+    <div class="employee__grid">
+      <label class="employee__field">
+        <span>Employee ID</span>
+        <input type="number" [(ngModel)]="employee.id" name="id" required min="1" step="1">
+      </label>
+
+      <label class="employee__field">
+        <span>Full Name</span>
+        <input type="text" [(ngModel)]="employee.name" name="name" required>
+      </label>
+
+      <label class="employee__field">
+        <span>Age</span>
+        <input type="number" [(ngModel)]="employee.age" name="age" required min="1" step="1">
+      </label>
+
+      <label class="employee__field">
+        <span>Salary</span>
+        <input type="number" [(ngModel)]="employee.salary" name="salary" required min="0" step="1">
+      </label>
+
+      <label class="employee__field">
+        <span>Designation</span>
+        <input type="text" [(ngModel)]="employee.desig" name="desig" required>
+      </label>
+    </div>
+
+    <div class="employee__actions">
+      <button type="submit" class="employee__primary">
+        {{ editMode ? 'Update' : 'Add' }}
+      </button>
+      <button type="button" class="employee__ghost" (click)="resetForm()">Clear</button>
+      <p class="employee__hint" *ngIf="editMode">
+        You are editing an existing record.
+      </p>
+    </div>
+  </form>
+
+  <div class="employee__panel" *ngIf="employees?.length; else emptyState">
+    <div class="employee__table">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+            <th>Designation</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of employees">
+            <td><span class="employee__id">#{{ e.id }}</span></td>
+            <td class="employee__name">{{ e.name }}</td>
+            <td>{{ e.age }}</td>
+            <td>{{ e.salary }}</td>
+            <td>{{ e.desig }}</td>
+            <td class="employee__action-cell">
+              <button class="employee__link" type="button" (click)="edit(e)">Edit</button>
+              <button class="employee__danger" type="button" (click)="delete(e.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <ng-template #emptyState>
+    <div class="employee__empty">
+      <h2>No employees yet</h2>
+      <p>Add a new employee using the form above to get started.</p>
+    </div>
+  </ng-template>
+</section> -->

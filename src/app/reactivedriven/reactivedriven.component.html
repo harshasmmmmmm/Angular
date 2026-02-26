@@ -1,0 +1,15 @@
+<p>reactivedriven works!</p>
+<div>
+    <form [formGroup]="student" (ngSubmit)="myinfo(student.value)">
+        <h3>
+
+            First Name :<input type="text" formControlName="firstname"><br>
+            Last Name :<input type="text" formControlName="lastname"><br>
+            USER Age :<input type="text" formControlName="age"><br><br>
+
+<input type="submit" [disabled]="student.invalid" 
+class="btn btn-success">
+            <input type="reset" value="RESET" class="btn btn-danger">
+        </h3>
+    </form>
+</div>

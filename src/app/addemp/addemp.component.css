@@ -1,0 +1,137 @@
+:host {
+  display: block;
+  padding: 36px 20px 44px;
+  background: radial-gradient(circle at top right, #f0f8ff 0%, #ffffff 55%, #f6fff6 100%);
+  min-height: 100%;
+  color: #1c2230;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+
+.addemp {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+}
+
+.addemp__header {
+  display: grid;
+  gap: 6px;
+}
+
+.addemp__eyebrow {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+  color: #5b6a7f;
+}
+
+.addemp__title {
+  margin: 0;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 600;
+}
+
+.addemp__subtitle {
+  margin: 0;
+  color: #5b6576;
+}
+
+.addemp__form {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(28, 34, 48, 0.08);
+  border: 1px solid rgba(28, 34, 48, 0.05);
+  display: grid;
+  gap: 22px;
+}
+
+.addemp__grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.addemp__field {
+  display: grid;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #3b4354;
+}
+
+.addemp__field span {
+  font-weight: 600;
+  color: #1f2a3a;
+}
+
+.addemp__field input {
+  border-radius: 12px;
+  border: 1px solid rgba(31, 42, 58, 0.15);
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.addemp__field input:focus {
+  border-color: #4b74ff;
+  box-shadow: 0 0 0 3px rgba(75, 116, 255, 0.15);
+}
+
+.addemp__field small {
+  color: #d35757;
+  font-size: 0.78rem;
+}
+
+.input--invalid {
+  border-color: #d35757;
+  box-shadow: 0 0 0 3px rgba(211, 87, 87, 0.12);
+}
+
+.addemp__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.addemp__actions button {
+  background: #1f2a3a;
+  color: #ffffff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.addemp__actions button:disabled {
+  background: #9aa4b2;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.addemp__actions button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(31, 42, 58, 0.2);
+}
+
+.addemp__hint {
+  margin: 0;
+  color: #7a8698;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  :host {
+    padding: 28px 16px 36px;
+  }
+
+  .addemp__form {
+    padding: 22px;
+  }
+}

@@ -1,0 +1,19 @@
+    <div>
+        <form #userForm="ngForm" (submit)="userdata(userForm.value)">
+    <div class="form-inline">
+        <label>UserName:<span style="color: red; " *ngIf="uname.invalid">*</span></label>
+        <input type="text"class="form-control" required name="uname"ngModel #uname="ngModel" required>
+        <p style="color: red;" *ngIf="uname.invalid && uname.touched">name must be required</p>
+    </div>
+    <div class="form-inline">
+        <label>password:<span style="color: red; " *ngIf="upass.invalid">*</span></label>
+        <input type="text"class="form-control" required name="upass"ngModel #upass="ngModel" required>
+        <p style="color: red;" *ngIf="upass.invalid && upass.touched">password must be required</p>
+    </div>
+    <div>
+        <br>
+        <input type="submit" class="btn btn-success "[disabled]="userForm.invalid">
+        <input type="reset" class="btn btn-danger">
+    </div>
+    </form>
+    </div>

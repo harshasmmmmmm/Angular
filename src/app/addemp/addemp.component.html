@@ -1,0 +1,101 @@
+<section class="addemp">
+  <header class="addemp__header">
+    <p class="addemp__eyebrow">Add Employee</p>
+    <h1 class="addemp__title">Create a new profile</h1>
+    <p class="addemp__subtitle">Fill in the details below. All fields are required.</p>
+  </header>
+
+  <!-- <form class="addemp__form" #empForm="ngForm" (ngSubmit)="addEmp()">
+    <div class="addemp__grid">
+      <label class="addemp__field">
+        <span>Employee ID</span>
+        <input
+          type="number"
+          name="id"
+          min="1"
+          step="1"
+          required
+          [(ngModel)]="employee.id"
+          #idModel="ngModel"
+          [class.input--invalid]="idModel.invalid && (idModel.touched || empForm.submitted)"
+        />
+        <small *ngIf="idModel.invalid && (idModel.touched || empForm.submitted)">
+          Enter a valid numeric ID.
+        </small>
+      </label>
+
+      <label class="addemp__field">
+        <span>Full Name</span>
+        <input
+          type="text"
+          name="name"
+          required
+          minlength="2"
+          [(ngModel)]="employee.name"
+          #nameModel="ngModel"
+          [class.input--invalid]="nameModel.invalid && (nameModel.touched || empForm.submitted)"
+        />
+        <small *ngIf="nameModel.invalid && (nameModel.touched || empForm.submitted)">
+          Name should be at least 2 characters.
+        </small>
+      </label>
+
+      <label class="addemp__field">
+        <span>Age</span>
+        <input
+          type="number"
+          name="age"
+          min="1"
+          step="1"
+          required
+          [(ngModel)]="employee.age"
+          #ageModel="ngModel"
+          [class.input--invalid]="ageModel.invalid && (ageModel.touched || empForm.submitted)"
+        />
+        <small *ngIf="ageModel.invalid && (ageModel.touched || empForm.submitted)">
+          Enter a valid age.
+        </small>
+      </label>
+
+      <label class="addemp__field">
+        <span>Salary</span>
+        <input
+          type="number"
+          name="salary"
+          min="0"
+          step="1"
+          required
+          [(ngModel)]="employee.salary"
+          #salaryModel="ngModel"
+          [class.input--invalid]="salaryModel.invalid && (salaryModel.touched || empForm.submitted)"
+        />
+        <small *ngIf="salaryModel.invalid && (salaryModel.touched || empForm.submitted)">
+          Salary must be a positive number.
+        </small>
+      </label>
+
+      <label class="addemp__field">
+        <span>Designation</span>
+        <input
+          type="text"
+          name="desig"
+          required
+          minlength="2"
+          [(ngModel)]="employee.desig"
+          #desigModel="ngModel"
+          [class.input--invalid]="desigModel.invalid && (desigModel.touched || empForm.submitted)"
+        />
+        <small *ngIf="desigModel.invalid && (desigModel.touched || empForm.submitted)">
+          Please provide a designation.
+        </small>
+      </label>
+    </div>
+
+    <div class="addemp__actions">
+      <button type="submit" [disabled]="empForm.invalid">Add Employee</button>
+      <p class="addemp__hint" *ngIf="empForm.invalid">
+        Complete all required fields to enable submission.
+      </p>
+    </div>
+  </form> -->
+</section>

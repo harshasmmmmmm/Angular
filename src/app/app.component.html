@@ -16,17 +16,18 @@
     <li><a routerLink="/dashboard">Dashboard</a></li>
     <li><a routerLink="/databinding">Databinding</a></li>
     <li><a routerLink="/demodierctive">Demo-dierctive</a></li>
+    <li><a routerLink="/forms">Forms</a></li>
+    <li><a routerLink="/pipes">Pipes</a></li>
+    <li><a routerLink="/integration">Integration</a></li>
+    <li><a routerLink="/addemp">AddEmp</a></li>
+    <li><a routerLink="/employee">Employee</a></li>
   </ul>
 
   <ul class="nav navbar-nav navbar-right">
-    <li><a routerLink="/signup">
-      <span class="glyphicon glyphicon-user"></span> Sign Up
-    </a></li>
-
-    <li><a routerLink="/login">
-      <span class="glyphicon glyphicon-log-in"></span> Login
-    </a></li>
-  </ul>
+  <li *ngIf="!auth.isLoggedIn()"><a routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+  <li *ngIf="!auth.isLoggedIn()"><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+  <li *ngIf="auth.isLoggedIn()"><a (click)="auth.logout()">Logout</a></li>
+</ul>
 </div>
 </nav>
 <router-outlet></router-outlet>

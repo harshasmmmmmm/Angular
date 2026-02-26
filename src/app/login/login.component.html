@@ -3,19 +3,30 @@
     <h1>Welcome Back</h1>
     <p class="subtitle">Sign in to continue</p>
 
-    <form class="login-form">
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm" class="login-form">
+      
       <label for="email">Email</label>
-      <input id="email" type="email" placeholder="you@example.com" />
+      <input id="email" type="email" placeholder="you@example.com" required
+             [(ngModel)]="emailId" name="emailId" #email="ngModel" />
+      <div *ngIf="email.invalid && email.touched" class="error">
+        Valid email is required
+      </div>
 
       <label for="password">Password</label>
-      <input id="password" type="password" placeholder="Enter your password" />
+      <input id="password" type="password" placeholder="Enter your password" required
+             [(ngModel)]="password" name="password" #pwd="ngModel" />
+      <div *ngIf="pwd.invalid && pwd.touched" class="error">
+        Password is required
+      </div>
 
-      <button type="submit">Login</button>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
     </form>
 
     <p class="footer-text">
       Don't have an account?
-      <a href="#">Sign up</a>
+      <a routerLink="/signup">Sign up</a>
     </p>
+
+    <p *ngIf="error" class="error">{{ error }}</p>
   </div>
 </div>
